@@ -1,0 +1,8 @@
+# Binaries
+*.a
+*.d
+*.o
+*.out
+
+# VSCode
+.vscode

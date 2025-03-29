@@ -14,7 +14,7 @@ L'autre jour en scrollant sur youtube je suis tombé sur [cette vidéo](https://
 Dans cette vidéo, il explique comment fonctionne le build system qu'il a crée.
 Son build système qui s'appelle nob.h pour nobuild.h.
 
-Et j'ai apprécié l'idée donc je décide d'en parler aujourd'hui
+Et j'ai apprécié l'idée donc je décide d'en parler aujourd'hui.
 
 # Histoire de nob.h
 
@@ -53,6 +53,14 @@ D'ailleurs, même lorsqu'il code dans un autre langage tel que le D dans [ce str
 - En dehors des projets C/C++, ça n'as pas vraiment de vrai utilité.
 - Ecrire en C
 
+### "Rétrocompatibilité"
+
+Un avantage que je n'ai pas abordé dans la partie d'avant c'est que si on prend un Makefile classique, compilé avec une version de GNU Make spécifique (par exemple, la version 2.0)
+et que dans une autre version de GNU Make (par exemple, la version 3.0), il y a une feature qui disparait de GNU Make et bien notre projet ne compilera plus.
+
+Avec nob, ce problème n'existe pas car si on veut build notre projet, on inclut directement une version spécifique de `nob.h`.
+Par exemple, si mon projet utilise une feature disponible dans la version 1.18 mais que dans la version 1.19 elle est supprimée, il compilera quand même car notre version de nob n'est pas dépendante d'un outil externe.
+
 # Est-ce une bonne idée? (Conclusion)
 
 `Réponse courte`: non.
@@ -68,5 +76,6 @@ Cependant, nob.h reste extrêmement peu documenté dût à peu d'utilisations, p
 Mais l'idée n'est pas mauvaise si vous aimez l'idée d'avoir seulement le compilateur C afin de pouvoir compiler vos programmes ainsi que l'idée de portabilité que offre nob.
 
 Il reste quand même une meilleure idée d'utiliser un Makefile ou bien un bon vieux script shell pour pouvoir compiler simplement votre projet car la plupart des gens qui s'intéressent à votre projet auront probablement eu affaire à ces outils par le passé.
+Et aussi vous aurez moins de mal à débugger car ces outils sont connus.
 
 <!-- TODO: continue -->

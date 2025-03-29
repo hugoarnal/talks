@@ -3,3 +3,6 @@ hello
 nob
 !nob/
 nob.h
+raylib/
+!examples/raylib/
+raylib*.tar.gz

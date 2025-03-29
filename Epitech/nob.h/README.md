@@ -28,6 +28,20 @@ Essayons de compiler notre projet avec un Makefile en premier:
 
 (Voir [examples/hello_world/makefile](./examples/hello_world/makefile))
 
+Le Makefile est très simple, il y a juste besoin de faire `make` et notre projet est compilé sans aucun problème.
+
+Maintenant pour l'exexmple avec nob.
+
+(Voir [examples/hello_world/nob](./examples/hello_world/nob)
+
+Une fois que nob.c est écrit, on peut compiler nob pour ensuite l'éxécuter:
+- `cc -o nob nob.c`
+- `./nob`
+
+et notre projet est compilé.
+
+# Fonctionnement d'un projet plus complexe
+
 <!-- TODO: fonctionnement d'un projet plus avancé, maybe raylib hello world avec plusieurs fichiers etc? -->
 
 # Pourquoi faire tout ça?

@@ -31,5 +31,6 @@ int main(void)
 
     if (!download_raylib(&cmd))
         return 84;
+    // TODO: continue this
     return 0;
 }

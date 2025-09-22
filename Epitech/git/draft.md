@@ -17,6 +17,11 @@ Tip:
 - Protected branches
     - `main` protected, peut que être push sous PR
 - `git pull` = `git fetch` & `git merge`
+- GUI, TUI
+    - VSCode, Magit, Lazygit, GitHub Desktop etc...
+- Commit Description
+- Remotes
+    - Local, upstream, downstream
 
 Surface:
 - mailing lists
@@ -27,6 +32,8 @@ Surface:
     - gitconfig
 - co author a commit
     - Co-authored-by footer
+- Jujutsu
+- `git bisect`
 
 Profondeur:
 - conditional gitconfig

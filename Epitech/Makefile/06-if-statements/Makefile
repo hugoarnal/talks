@@ -19,3 +19,21 @@ main:	$(OBJ)
 clean:
 	$(RM) $(OBJ)
 	$(RM) main
+
+# These if statements can also be used to check for platform checks!
+ifeq ($(OS),Windows_NT)
+	PLATFORM	:=	Hello, Windows user!
+else
+    UNAME_S := $(shell uname -s)
+	PLATFORM	:=	Hello, Other unknown platform user!
+    ifeq ($(UNAME_S),Linux)
+		PLATFORM	:=	Hello, Linux user!
+    endif
+    ifeq ($(UNAME_S),Darwin)
+		PLATFORM	:=	Hello, OSX user!
+    endif
+endif
+
+.PHONY: platform-check
+platform-check:
+	@echo $(PLATFORM)

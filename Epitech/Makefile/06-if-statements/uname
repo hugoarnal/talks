@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#
+## To be ran with: `PATH="./:/usr/bin" make platform-check`
+
+echo "Darwin"

@@ -9,3 +9,8 @@ clean:
 
 # Fix by uncommenting below:
 # .PHONY: clean all
+
+# You can also have multiple PHONY per makefile
+.PHONY: last-rule
+last-rule:
+	echo Ignore this one.

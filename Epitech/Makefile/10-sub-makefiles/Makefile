@@ -1,3 +1,8 @@
+VARIABLE	:=	variable!
+
+# The variable isn't inherited unless you uncomment this line.
+# export VARIABLE
+
 all:
 #	I wouldn't recommend @ or -s, it's just for the example.
 # 	In real cases, you want the most logs for debugging purposes.

@@ -11,13 +11,14 @@ main: $(OBJ)
 
 # You can override an implicit rule like this
 #	$@ = %.o part
-#	$< = %.c part
-#
+#	$< = First element in the %.c part
+#	$^ = All elements in the %.c part
+
 # Uncomment right below:
 #
 # %.o: %.c
 # 	echo "This is an overriden implicit rule!"
-# 	$(CC) -c -o $@ $<
+# 	$(CC) -c -o $@ $^
 
 clean:
 	$(RM) $(OBJ)

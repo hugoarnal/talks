@@ -6,7 +6,7 @@ FOO_MK	:=	foo.mk
 
 include $(FOO_MK)
 
-# If you wish to include a makefile that does not exist yet (not recommended):
+# If you wish to include a makefile that can error (ex: does not exist yet) (not recommended):
 #
 # -include b.mk
 

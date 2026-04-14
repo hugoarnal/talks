@@ -83,14 +83,47 @@
   #grid(
     columns: (1fr, auto),
     column-gutter: 1em,
-    box([
+    [
+      #set align(horizon)
       - Your commits are listed from oldest to newest
       - By default, they're all in "pick" mode: essentially does not touch the commit.
-    ]),
+    ],
     figure(
-      image("./assets/rebase-interactive-1.webp", height: 270pt)
+      image("./assets/rebase-interactive-1.webp", height: 320pt)
     )
   )
+]
+
+#slide[
+  == Full control with interactive mode
+
+  #set text(size: 20pt)
+  #grid(
+    columns: (1fr, auto),
+    column-gutter: 1em,
+    [
+      #set align(horizon)
+      - Change the content of a commit by replacing "pick" with "edit"
+    ],
+    figure(
+      image("./assets/rebase-interactive-edit.webp", height: 320pt)
+    )
+  )
+]
+
+#slide[
+  == Full control with interactive mode
+
+  #set align(center)
+  #image("./assets/rebase-interactive-edit-amend.webp", height: 320pt)
+]
+
+#slide[
+  == Full control with interactive mode
+
+  #set align(center)
+  Success!
+  #image("./assets/rebase-interactive-edit-log.webp", height: 270pt)
 ]
 
 #slide[

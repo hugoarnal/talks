@@ -7,11 +7,20 @@
 #slide[
   #set align(horizon)
 
-  == Rebase after base
+  #grid(
+    columns: (1fr, auto),
+    column-gutter: 1em,
+    [
+      == Rebase after base
 
-  Learn how to master `git rebase`
+      Learn how to master `git rebase`
 
-  Hugo ARNAL
+      Hugo ARNAL
+    ],
+    figure(
+      image("./assets/gd-git.webp", height: 320pt)
+    )
+  )
 ]
 
 #slide[

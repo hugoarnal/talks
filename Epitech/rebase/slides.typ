@@ -200,6 +200,7 @@
 #slide[
   == Why use `git rebase`?
 
+  #set align(horizon)
   - More control over your git history
 ]
 

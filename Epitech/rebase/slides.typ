@@ -201,7 +201,24 @@
   == Why use `git rebase`?
 
   - More control over your git history
+]
 
+#slide[
+  == When you should NOT use `git rebase`
+
+  #set align(horizon)
+  - Two people working on the same branch
+  Pushing with `--force` might delete some work
+
+  An alternative to it is `git push --force-with-lease` but retains dangerous
+]
+
+#slide[
+  == When you should NOT use `git rebase`
+
+  #set align(horizon)
+  - Rewriting the history of an already pushed branch
+  I recommend to prevent this by setting rules on your branches (unfortunately can't be done on Epitech repos, except for mirrors).
 ]
 
 #slide[

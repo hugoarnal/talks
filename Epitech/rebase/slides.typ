@@ -55,6 +55,15 @@
 ]
 
 #slide[
+  #set align(center)
+  #set align(horizon)
+  #set text(size: 70pt)
+  == ⚠️ Warning ⚠️
+  #set text(size: 25pt)
+  Using `git rebase` will lead to use `git push --force` which is EXTREMELY dangerous.
+]
+
+#slide[
   == Full control with interactive mode
 
   #set text(size: 17pt)

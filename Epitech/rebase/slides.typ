@@ -133,9 +133,51 @@
 #slide[
   == Full control with interactive mode
 
-  #set align(center)
-  Success!
-  #image("./assets/rebase-interactive-edit-log.webp", height: 270pt)
+  - Squash commits to clean your history
+
+  ```sh
+  git checkout -b squash
+  for c in H e l l o ' ' w o r l d; do
+      echo "$c" >> squash.txt
+      git add squash.txt
+      git commit -m "Add '$c' to squash.txt"
+  done
+  ```
+
+  #set text(size: 10pt)
+  Source: git-rebase.io
+  #set text(size: 25pt)
+
+  #pagebreak()
+
+  #set text(size: 20pt)
+  - Replacing all picks (except the first one) with squash
+
+  ```sh
+  pick 1e85199 Add 'H' to squash.txt
+  squash fff6631 Add 'e' to squash.txt
+  squash b354c74 Add 'l' to squash.txt
+  squash 04aaf74 Add 'l' to squash.txt
+  squash 9b0f720 Add 'o' to squash.txt
+  squash dc158cd Add ' ' to squash.txt
+  squash dfcf9d6 Add 'w' to squash.txt
+  squash 7a85f34 Add 'o' to squash.txt
+  squash c275c27 Add 'r' to squash.txt
+  squash a513fd1 Add 'l' to squash.txt
+  squash 6b608ae Add 'd' to squash.txt
+  ```
+
+  - This will create a singular commit with all the content from the other commits.
+]
+
+#slide[
+  == Bunch of other features
+
+  #set align(horizon)
+  - Using `git rebase --autosquash`
+  - Splitting one commit into several
+  - Reordering commits
+  - Resolving conflicts
 ]
 
 #slide[

@@ -118,13 +118,16 @@
       image("./assets/rebase-interactive-edit.webp", height: 320pt)
     )
   )
-]
 
-#slide[
-  == Full control with interactive mode
-
+  #pagebreak()
   #set align(center)
+
   #image("./assets/rebase-interactive-edit-amend.webp", height: 320pt)
+
+  #pagebreak()
+
+  Success!
+  #image("./assets/rebase-interactive-edit-log.webp", height: 270pt)
 ]
 
 #slide[

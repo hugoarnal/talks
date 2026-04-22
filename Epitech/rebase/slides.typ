@@ -223,13 +223,32 @@
 ]
 
 #slide[
+  == Going further?
+
+  #set align(horizon)
+  `git history` landing in Git 2.54!
+
+  A safer way to just modify commit messages, without rebasing.
+
+  #link("https://front-end.social/@stefan/116441339289854563")[#underline("See an example")]
+]
+
+#slide[
   == Sources
 
   #set align(horizon)
-  - https://git-scm.com/cheat-sheet.pdf
+  #set text(20pt)
+  Useful tutorials:
   - https://git-rebase.io
   - https://learngitbranching.js.org
+
+  #pagebreak()
+
+  - https://git-scm.com/cheat-sheet.pdf
   - https://jvns.ca/blog/2023/11/06/rebasing-what-can-go-wrong-
+  - https://github.blog/open-source/git/highlights-from-git-2-54/
+  - https://git-scm.com/docs/git-history/2.54.0
+  - https://front-end.social/@stefan/116441339289854563
 ]
 
 #slide[

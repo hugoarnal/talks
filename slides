@@ -1,0 +1,18 @@
+# This is a configuration file for building the static website
+#
+# There are two modes of this file:
+# - Compilation mode:
+#       Prefixed by compilation
+#       First argument is the path of the Makefile
+#       Second is the rule that should be executed
+#
+# - Include mode:
+#       Includes the file directly in the static site
+#       First argument is the path of the file
+
+# Version of the "configuration language"
+version:1
+
+# git rebase talk
+compilation:Epitech/rebase/:slides.pdf
+include:Epitech/rebase/slides.pdf

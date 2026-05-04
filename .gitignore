@@ -4,5 +4,8 @@
 *.o
 *.out
 
+# "Compiled" Slides
+*.pdf
+
 # VSCode
 .vscode

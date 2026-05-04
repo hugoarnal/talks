@@ -1,0 +1,6 @@
+[project]
+name = "slides-builder"
+version = "0.1.0"
+description = "A simple slides website builder"
+requires-python = ">=3.14"
+dependencies = []

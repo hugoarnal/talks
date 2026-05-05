@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+## Convert your current folder files from format A to B
+
+ORIGINAL_FORMAT=$1
+OUTPUT_FORMAT=$2
+
+for i in *.$1; do ffmpeg -i "$i" "${i%.*}.$2"; done

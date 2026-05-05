@@ -237,12 +237,12 @@
   == Sources
 
   #set align(horizon)
-  #set text(20pt)
+  #set text(15pt)
   Useful tutorials:
   - https://git-rebase.io
   - https://learngitbranching.js.org
 
-  #pagebreak()
+  #linebreak()
 
   - https://git-scm.com/cheat-sheet.pdf
   - https://jvns.ca/blog/2023/11/06/rebasing-what-can-go-wrong-

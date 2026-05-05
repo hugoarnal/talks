@@ -1,6 +1,7 @@
 import os
 import shutil
 from enum import Enum
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 from pathlib import Path
 
 class LineType(Enum):
@@ -92,6 +93,7 @@ class Builder:
 
         self.buildPath = Path("build")
         self.basePath = Path("..")
+        self.templatesPath = Path("templates")
         self.config = Configuration(self.basePath / "slides")
         self.files = []
 
@@ -106,10 +108,21 @@ class Builder:
                 os.makedirs(path)
             shutil.copyfile(self.basePath / file, self.buildPath / file)
 
+    def _generateIndex(self):
+        index = Path(self.buildPath / "index.html")
+        env = Environment(loader=FileSystemLoader(self.templatesPath), autoescape=select_autoescape())
+
+        template = env.get_template("index.html")
+        buf = template.render(slides=self.files)
+
+        with open(index, "wb") as f:
+            f.write(bytes(buf, "utf-8"))
+
     def execute(self):
         self._executeConfig()
 
         self._copyToBuildFolder()
+        self._generateIndex()
 
 def main():
     builder = Builder()

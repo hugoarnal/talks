@@ -180,6 +180,22 @@
 ]
 
 #slide[
+  == Rebasing to... rebase!
+
+  #image("./assets/branches-2.webp", width: 700pt)
+]
+
+#slide[
+  == Rebasing to... rebase!
+
+  #set text(20pt)
+  Let's say mango doesn't need to depend on banana to be merged in main.
+
+  #set align(center)
+  #image("./assets/branches-rebase-onto.webp", width: 450pt)
+]
+
+#slide[
   == Bunch of other features
 
   #set align(horizon)

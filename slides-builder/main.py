@@ -92,10 +92,15 @@ class Builder:
             os.mkdir("build")
 
         self.buildPath = Path("build")
+        self.slidesPath = Path(self.buildPath / "slides")
         self.basePath = Path("..")
         self.templatesPath = Path("templates")
         self.config = Configuration(self.basePath / "slides")
         self.files = []
+
+        path = Path(self.slidesPath).parent
+        if not os.path.exists(path):
+            os.makedirs(path)
 
     def _executeConfig(self):
         for line in self.config.read():
@@ -103,14 +108,14 @@ class Builder:
 
     def _copyToBuildFolder(self):
         for file in self.files:
-            path = Path(self.buildPath / file).parent
+            path = Path(self.slidesPath / file).parent
             if not os.path.exists(path):
                 os.makedirs(path)
-            shutil.copyfile(self.basePath / file, self.buildPath / file)
+            shutil.copyfile(self.basePath / file, self.slidesPath / file)
 
-    def _generateIndex(self):
-        index = Path(self.buildPath / "index.html")
-        env = Environment(loader=FileSystemLoader(self.templatesPath), autoescape=select_autoescape())
+    def _generateSlidesIndex(self):
+        index = Path(self.slidesPath / "index.html")
+        env = Environment(loader=FileSystemLoader(self.templatesPath / "slides"), autoescape=select_autoescape())
 
         template = env.get_template("index.html")
         buf = template.render(slides=self.files)
@@ -122,7 +127,7 @@ class Builder:
         self._executeConfig()
 
         self._copyToBuildFolder()
-        self._generateIndex()
+        self._generateSlidesIndex()
 
 def main():
     builder = Builder()

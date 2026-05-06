@@ -205,6 +205,36 @@
 ]
 
 #slide[
+  == Why use `git rebase`?
+
+  #set text(20pt)
+  - Features are clearer when getting reviewed
+
+  Question: as a PR reviewer, which one do you find clearer?
+
+  #grid(
+    columns: (2fr, auto),
+    column-gutter: 1em,
+    [
+      #set text(15pt)
+      1.
+      - feat: new feature
+      - fix: feature
+      - ref: change how feature works
+      - imp: respect coding style
+      - Merge branch "main"
+      - fix: new changes with main branch
+      - feat: another important feature
+    ],
+    [
+      2.
+      - feat: new feature
+      - feat: another important feature
+    ]
+  )
+]
+
+#slide[
   == When you should NOT use `git rebase`
 
   #set align(horizon)

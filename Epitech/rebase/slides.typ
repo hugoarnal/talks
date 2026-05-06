@@ -253,6 +253,16 @@
 ]
 
 #slide[
+  == In resume
+
+  #set align(horizon)
+  - Use `git rebase` to maintain a clean history
+  Cleaner history makes code reviews easier in general.
+  - Do not use rebases when working with other people on the same branch (usually).
+  Because you will use `git push --force` which is ⚠️ DANGEROUS ⚠️
+]
+
+#slide[
   == Going further?
 
   #set align(horizon)

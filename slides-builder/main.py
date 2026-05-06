@@ -111,6 +111,9 @@ class Builder:
             self._createFolder(Path(self.slidesPath / file).parent)
             shutil.copyfile(self.basePath / file, self.slidesPath / file)
 
+    def _generateIndex(self):
+        shutil.copyfile(self.templatesPath / "index.html", self.buildPath / "index.html")
+
     def _generateSlidesIndex(self):
         index = Path(self.slidesPath / "index.html")
         env = Environment(loader=FileSystemLoader(self.templatesPath / "slides"), autoescape=select_autoescape())
@@ -125,6 +128,7 @@ class Builder:
         self._executeConfig()
 
         self._copyToBuildFolder()
+        self._generateIndex()
         self._generateSlidesIndex()
 
 def main():

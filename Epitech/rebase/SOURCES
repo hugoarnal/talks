@@ -1,0 +1,6 @@
+assets/:
+- branches-rebase.webp, branches-merge.webp, branches-rebase-onto.webp, branches-2.webp, branches.webp: https://git-scm.com/cheat-sheet.pdf
+
+slides.typ:
+- Some content has been inspired from https://git-rebase.io
+- All sources are cited on the Sources slide.

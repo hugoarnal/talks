@@ -88,9 +88,6 @@ class Configuration:
 
 class Builder:
     def __init__(self):
-        if not os.path.exists("build"):
-            os.mkdir("build")
-
         self.buildPath = Path("build")
         self.slidesPath = Path(self.buildPath / "slides")
         self.basePath = Path("..")
@@ -98,7 +95,10 @@ class Builder:
         self.config = Configuration(self.basePath / "slides")
         self.files = []
 
-        path = Path(self.slidesPath).parent
+        self._createFolder(Path(self.buildPath).parent)
+        self._createFolder(Path(self.slidesPath).parent)
+
+    def _createFolder(self, path):
         if not os.path.exists(path):
             os.makedirs(path)
 
@@ -108,9 +108,7 @@ class Builder:
 
     def _copyToBuildFolder(self):
         for file in self.files:
-            path = Path(self.slidesPath / file).parent
-            if not os.path.exists(path):
-                os.makedirs(path)
+            self._createFolder(Path(self.slidesPath / file).parent)
             shutil.copyfile(self.basePath / file, self.slidesPath / file)
 
     def _generateSlidesIndex(self):

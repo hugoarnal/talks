@@ -37,10 +37,10 @@
 
   #show raw.where(lang: "graph"): enable-graph-in-raw(tree-render)
   ```graph
-  1-2;
-  2-3;
-  3-4;
-  4-5;
+  A-B;
+  B-C;
+  C-D;
+  D-E;
   ```
   From left -> right
 ]

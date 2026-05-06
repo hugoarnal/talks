@@ -202,6 +202,7 @@
 
   #set align(horizon)
   - More control over your git history
+  Editing and controlling the git history of your branch is usually essential when working on open source projects.
 ]
 
 #slide[

@@ -3,9 +3,9 @@ name: Slides builder
 on:
   push:
     paths:
-      - ./slides
-      - ./.github/workflows/slides-builder.yml
-      - ./slides-builder/**
+      - "slides"
+      - ".github/workflows/slides-builder.yml"
+      - "slides-builder/**"
   workflow_dispatch:
 
 permissions:

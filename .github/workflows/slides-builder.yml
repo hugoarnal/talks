@@ -24,12 +24,12 @@ jobs:
         with:
           working-directory: "./slides-builder"
 
-      - name: Install latest typst version
-        uses: typst-community/setup-typst@63ac138db421d586de61f7f5ac3bcef6a2e6c78c # v5.1.0
+      - name: Install nix
+        uses: cachix/install-nix-action@8aa03977d8d733052d78f4e008a241fd1dbf36b3 # v31.10.6
 
       - name: Launch slides-builder
+        shell: "bash -c \"cd slides-builder && nix develop -c bash -e {0}\""
         run: |
-          cd slides-builder
           make run-build
 
       - name: Setup Pages

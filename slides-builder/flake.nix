@@ -15,6 +15,7 @@
       devShell = pkgs.mkShell {
         packages = with pkgs; [
           typst
+          uv
         ];
 
         shellHook = ''

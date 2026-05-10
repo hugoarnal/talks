@@ -81,6 +81,40 @@
 ]
 
 #slide[
+  == Example of a patch
+
+  #set text(size: 20pt)
+  Left: original source code, right: patch to apply
+  #grid(
+    columns: (1fr, auto),
+    column-gutter: 1em,
+    [
+      ```c
+      #include <stdio.h>
+
+      int main(void)
+      {
+        printf("Hello world!\n");
+      }
+      ```
+    ],
+    [
+      ```diff
+--- a.c 2026-05-10 16:47:17.250776740 +0200
++++ b.c 2026-05-10 16:47:31.502421173 +0200
+@@ -2,5 +2,5 @@
+
+ int main(void)
+ {
+-    printf("Hello world!\n");
++    puts("This is an example");
+ }
+      ```
+    ]
+  )
+]
+
+#slide[
   == Workshop
 
   #set text(size: 20pt)

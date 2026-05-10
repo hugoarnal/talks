@@ -203,6 +203,51 @@
 ]
 
 #slide[
+  == git diff
+
+  Simplest version of a git commit patch
+
+  - Make some changes to your repo, don't push them
+
+  #set align(center)
+  #image("assets/git-diff.webp", width: 350pt)
+]
+
+#slide[
+  == git format-patch
+
+  How do I create patches of a git project?
+
+  - Create a new branch
+  - Create your commits changing what you need
+  - Use `git format-patch <original branch>`
+
+  This will create `000?-*.patch` files
+]
+
+#slide[
+  == git apply
+
+  #set align(horizon)
+  Applies the patches of a given `.patch` file (but does not commit it)
+
+  #set align(center)
+  `git apply 0001-interesting.patch`
+]
+
+#slide[
+  == git am
+
+  - Description: `Apply a series of patches from a mailbox`
+
+  #set align(horizon)
+  Applies the patches of a given `.patch` file #text("AND", weight: "bold") applies it.
+
+  #set align(center)
+  `git am 0001-interesting.patch`
+]
+
+#slide[
   == Workshop
 
   #set text(size: 20pt)
@@ -237,7 +282,7 @@
   - Remove all colors #underline(text("except", weight: "bold")) red (JS)
   - Make Captcha length 4 instead of 7 (Rust & JS)
   - Unhard code the WIDTH & HEIGHT variables #text("(must use a rebase method)", weight: "bold")
-  - Apply the given patch #text("(0001-ref-separate-Fruit-Pad-from-script.js.patch)", size: 12pt)
+  - Apply the given patch #text("(0001-ref-separate-Fruit-Pad-from-script.js.patch)", size: 12pt) with the original commit
 ]
 
 #slide[

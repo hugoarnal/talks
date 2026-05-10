@@ -26,6 +26,61 @@
 ]
 
 #slide[
+  == Some history
+
+  #set text(size: 20pt)
+  Apparently, patches have existed since punch cards!
+
+  #grid(
+    columns: (1fr, auto),
+    column-gutter: 1em,
+    [
+      #set align(horizon)
+      You would cut the right part and replace it with the patched one!
+    ],
+    figure(
+      image("assets/punch-card.webp", width: 200pt)
+    )
+  )
+]
+
+#slide[
+  == Some history
+
+  Patches always existed in two forms:
+  - Source code patching
+  - Binary patching
+
+  We're going to be only talking about source code patching.
+]
+
+#slide[
+  == Some #strike("git") history
+
+  How modifications to the Linux kernel work:
+  #set text(size: 20pt)
+  - Create modifications to the kernel
+  - Generate the patch using `diff(1)` and `patch(1)`
+  - Send the .patch files to maintainers via email
+
+  #set text(size: 25pt)
+  The Linux kernel was using BitKeeper before git which simplified this flow.
+
+  #set align(center)
+  #image("assets/bitkeeper-logo.webp")
+]
+
+#slide[
+  == Some #strike("git") history
+
+  Problems with BitKeeper:
+  - Slow (most CVS took >30s to apply patches)
+  - Proprietary license
+
+  This made Linus create git once BitKeeper revoked the Kernel's license.
+]
+
+#slide[
   == Workshop
 
   #set text(size: 20pt)
@@ -64,7 +119,17 @@
 ]
 
 #slide[
-  == Slides & Source
+  == Sources
+
+  #set text(size: 17pt)
+  - https://en.wikipedia.org/wiki/Git
+  - https://en.wikipedia.org/wiki/Patch_(computing)
+  - https://fr.wikipedia.org/wiki/Fichier:Bitkeeper-logo.png
+  - https://docs.kernel.org/process/submitting-patches.html
+]
+
+#slide[
+  == Slides
 
   #set align(horizon)
   #set align(center)

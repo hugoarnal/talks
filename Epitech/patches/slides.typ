@@ -120,29 +120,29 @@
   #set text(size: 20pt)
   Most #strike("Linux distros") Operating Systems use patches. If you're running an Arch Linux system, some packages you install are patched to work on your system.
 
-  clang requires 3 patches to work:
+  clang requires 3 patches to work (as of 10th May 2026):
   #set text(size: 13pt)
-  - 0001-Revert-clang-driver-When-fveclib-ArmPL-flag-is-in-us.patch
-  - 0002-Reapply-CUDA-HIP-Add-a-__device__-version-of-std-__g.patch
-  - enable-fstack-protector-strong-by-default.patch
+  - `0001-Revert-clang-driver-When-fveclib-ArmPL-flag-is-in-us.patch`
+  - `0002-Reapply-CUDA-HIP-Add-a-__device__-version-of-std-__g.patch`
+  - `enable-fstack-protector-strong-by-default.patch`
 
   #set text(size: 20pt)
-  rustc requires 8 patches to work:
+  rustc requires 8 patches to work (as of 10th May 2026):
   #set text(size: 11pt)
   #grid(
     columns: (1fr, 1fr),
     column-gutter: 1em,
     [
-      - 0001-bootstrap-Change-libexec-dir.patch
-      - 0002-bootstrap-Change-bash-completion-dir.patch
-      - 0003-bootstrap-Workaround-for-system-stage0.patch
-      - 0004-compiler-Change-LLVM-targets.patch
+      - `0001-bootstrap-Change-libexec-dir.patch`
+      - `0002-bootstrap-Change-bash-completion-dir.patch`
+      - `0003-bootstrap-Workaround-for-system-stage0.patch`
+      - `0004-compiler-Change-LLVM-targets.patch`
     ],
     [
-      - 0005-compiler-Use-ld.lld-by-default.patch
-      - 0006-compiler-Use-target-specific-GCC-linkers.patch
-      - 0007-compiler-Link-riscv64-musl-statically.patch
-      - 0008-compiler-Swap-primary-and-secondary-lib-dirs.patch
+      - `0005-compiler-Use-ld.lld-by-default.patch`
+      - `0006-compiler-Use-target-specific-GCC-linkers.patch`
+      - `0007-compiler-Link-riscv64-musl-statically.patch`
+      - `0008-compiler-Swap-primary-and-secondary-lib-dirs.patch`
     ]
   )
 ]
@@ -182,6 +182,24 @@
 
   #set align(center)
   #image("assets/sourcehut-logo.webp")
+]
+
+#slide[
+  == Patches vs forking
+
+  Forking is taking a repository, making a copy of it then modifying the source code.
+
+  #set text(size: 20pt)
+  Why would I use patches instead of just forking?
+
+  Overall, forking is heavy and can make it harder to follow upstream commits.
+
+  #linebreak()
+
+  #set text(size: 15pt)
+  I recommand this blog post:
+
+  https://nesbitt.io/2026/05/01/patching-and-forking-in-package-managers.html
 ]
 
 #slide[

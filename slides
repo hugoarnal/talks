@@ -16,3 +16,8 @@ version:1
 # git rebase talk
 compilation:Epitech/rebase/:slides.pdf
 include:Epitech/rebase/slides.pdf
+
+# patches talk
+compilation:Epitech/patches/:slides.pdf
+include:Epitech/patches/slides.pdf
+include:Epitech/patches/0001-ref-separate-Fruit-Pad-from-script.js.patch

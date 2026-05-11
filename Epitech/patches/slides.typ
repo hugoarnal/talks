@@ -17,11 +17,9 @@
 
       Hugo ARNAL
     ],
-    // TODO: very bad photoshop of clothes with a patch of the Git logo
-    //
-    // figure(
-    //   image("./assets/git-patch-jacket.webp", height: 320pt)
-    // )
+    figure(
+      image("./assets/git-mercurochrome.webp", height: 320pt)
+    )
   )
 ]
 

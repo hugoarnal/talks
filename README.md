@@ -1,3 +1,5 @@
 # Talks
 
-Talks & Workshops I've done at Epitech
+Talks & Workshops I've made
+
+Consult all slides at https://talks.hugoarnal.com

@@ -2,6 +2,8 @@ name: Slides builder
 
 on:
   push:
+    branches:
+      - main
     paths:
       - "slides"
       - ".github/workflows/slides-builder.yml"

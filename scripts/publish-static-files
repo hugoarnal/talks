@@ -6,7 +6,8 @@ if [ -z "$1" ] || [ -z "$2" ]; then
 fi
 
 BUILD_PATH="$1"
-WEBSITE_PATH="$2/static"
+STATIC_FOLDER="static"
+WEBSITE_PATH="$2/$STATIC_FOLDER"
 
 cp -a "$BUILD_PATH/." "$WEBSITE_PATH"
 
@@ -21,6 +22,6 @@ BRANCH_NAME="talks-update-$(date +%s)"
 git switch -c "$BRANCH_NAME"
 git config user.name "slides-builder"
 git config user.email "slides-builder@hugoarnal.com"
-git add "$WEBSITE_PATH"
+git add "$STATIC_FOLDER"
 git commit -m "slides: update"
 git push origin "$BRANCH_NAME"

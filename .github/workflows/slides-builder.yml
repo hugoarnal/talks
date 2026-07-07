@@ -43,5 +43,6 @@ jobs:
           git checkout talks
 
       - name: Publish static files
+        # If the script errors out, it means there's probably nothing to update
         run: |
-          ./scripts/publish-static-files slides-builder/build website
+          ./scripts/publish-static-files slides-builder/build website || exit 0

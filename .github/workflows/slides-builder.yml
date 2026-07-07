@@ -27,11 +27,20 @@ jobs:
         run: |
           make run-build
 
-      - uses: actions/checkout@v6
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@87a8f067114a8ce263df83e9ed5c849953548bc3 # v2.8.1
         with:
-          repository: https://codeberg.org/hugoarnal/website
-          path: website
-          ref: talks  # Temporary
+          key: "${{ secrets.SSH_KEY }}"
+          name: id_rsa
+          # Manually add the Codeberg key
+          known_hosts: |
+            codeberg.org ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8hZi7K1/2E2uBX8gwPRJAHvRAob+3Sn+y2hxiEhN0buv1igjYFTgFO2qQD8vLfU/HT/P/rqvEeTvaDfY1y/vcvQ8+YuUYyTwE2UaVU5aJv89y6PEZBYycaJCPdGIfZlLMmjilh/Sk8IWSEK6dQr+g686lu5cSWrFW60ixWpHpEVB26eRWin3lKYWSQGMwwKv4LwmW3ouqqs4Z4vsqRFqXJ/eCi3yhpT+nOjljXvZKiYTpYajqUC48IHAxTWugrKe1vXWOPxVXXMQEPsaIRc2hpK+v1LmfB7GnEGvF1UAKnEZbUuiD9PBEeD5a1MZQIzcoPWCrTxipEpuXQ5Tni4mN
+
+      - name: Clone website repo
+        run: |
+          git clone git@codeberg.org:hugoarnal/website.git website
+          cd website
+          git checkout talks
 
       - name: Publish static files
         run: |

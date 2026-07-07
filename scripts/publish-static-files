@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+    echo "Missing arguments"
+    exit 1
+fi
+
+BUILD_PATH="$1"
+WEBSITE_PATH="$2/static"
+
+cp -a "$BUILD_PATH/." "$WEBSITE_PATH"
+
+cd "$WEBSITE_PATH" || exit 1
+
+# Exit out if there is nothing to commit
+if [[ "$(git status | tail -1 )" =~ "nothing to commit" ]]; then
+    exit 1
+fi
+
+BRANCH_NAME="talks-update-$(date +%s)"
+git switch -c "$BRANCH_NAME"
+git config user.name "slides-builder[bot]"
+git config user.email "slides-builder@hugoarnal.com"
+git commit -m "slides: update"
+git push origin "$BRANCH_NAME"

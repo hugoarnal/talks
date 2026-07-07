@@ -12,8 +12,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 jobs:
   slides-builder:
@@ -29,14 +27,12 @@ jobs:
         run: |
           make run-build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+      - uses: actions/checkout@v6
         with:
-          path: "./slides-builder/build"
+          repository: https://codeberg.org/hugoarnal/website
+          path: website
+          ref: talks  # Temporary
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+      - name: Publish static files
+        run: |
+          ./scripts/publish-static-files slides-builder/build website

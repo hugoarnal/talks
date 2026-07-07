@@ -22,6 +22,6 @@ BRANCH_NAME="talks-update-$(date +%s)"
 git switch -c "$BRANCH_NAME"
 git config user.name "slides-builder"
 git config user.email "slides-builder@hugoarnal.com"
-git add "$STATIC_FOLDER"
+git add .
 git commit -m "slides: update"
 git push origin "$BRANCH_NAME"

@@ -8,6 +8,7 @@ on:
       - "slides"
       - ".github/workflows/slides-builder.yml"
       - "slides-builder/**"
+      - "scripts/publish-static-files"
   workflow_dispatch:
 
 permissions:

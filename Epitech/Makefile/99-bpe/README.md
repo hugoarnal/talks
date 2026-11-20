@@ -22,22 +22,34 @@ This will create a bpe folder containing all the source material.
 
 # Goal
 
-In the `bpe` directory, create a Makefile that:
-- If no `CC` is specified, build using gcc
-- Sets the `CFLAGS` by default to `-Wall -Wextra -Ofast`
-- If `ENV` is set to `dev`, add `-ggdb` to the `CFLAGS`
-- Set include folder to point to `thirdparty` using the right variable
-- Sets an overriden implicit rule to compile from `.c` to `.o` and then echo `file.c built!`
-- Build the `txt2bpe`, `bpe_inspect` and `bpe_gen` binaries
-- Force the `bpe_inspect` rule to use `clang` as its `CC` variable
+You must create a Makefile that does the following:
+- Sets the `CFLAGS` to `-Wall -Wextra -O3`
+- Sets the include folder flag to point to `thirdparty/` using the right variable ([hint](https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html#index-CPPFLAGS))
+- Builds a `txt2bpe` binary:
+    - Sources:
+      - `src/bpe.c`
+      - `src/txt2bpe.c`
+- Builds a `bpe_inspect` binary:
+    - Sources:
+      - `src/bpe.c`
+      - `src/bpe_inspect.c`
+- Builds a `bpe_gen` binary:
+    - Sources:
+      - `src/bpe.c`
+      - `src/bpe_gen.c`
+- `generate-bpe`: checks that `txt2bpe` is built and then executes `./txt2bpe -max-iterations 10000 -dump-freq 1000 -input-file data/full_source.txt -output-dir bpe_genned`
+- `inspect-bpe`: checks that `bpe_inspect` is built and then executes `./bpe_inspect bpe_genned/9000.bpe`
+- `random-text`: checks that `bpe_gen` is built and then **silently** executes `./bpe_gen -bpe bpe_genned/9000.bpe -limit 1000`
 - `all`, `clean`, `fclean`, `re` rules (You know what these do :-))
 
-And finally 3 custom rules:
-- `generate-bpe`: checks that `txt2bpe` is built and then executes `./txt2bpe -max-iterations 10000 -dump-freq 1000 -input-file data/full_source.txt -output-dir bpe_genned`
+> When "re-running" a rule, make sure it doesn't recompile the binary. The binary must be recompiled only when the source file is changed.
 
-> (For these next two rules you need a `LAST_BPE` variable does this shell command `find bpe_genned -name "*.bpe" | sort | tail -n 1`)
-- `inspect-bpe`: checks that `bpe_inspect` is built and then executes `./bpe_inspect $(LAST_BPE)`
-- `random-text`: checks that `bpe_gen` is built and then **silently** executes `./bpe_gen -bpe $(LAST_BPE) -limit 1000`
+Everything above is only the essentials.
+If you wish to go further, you can add the following stuff:
+- If no `CC` is specified, build using `gcc`
+- If the environment variable `ENV` is set to `dev`, add `-ggdb` to the `CFLAGS`
+- Sets the `.PHONY` variable to all rules that don't generate a binary
+- Sets an overriden implicit rule to compile from `.c` to `.o` and then echo `file.c built!`
 
 ### Answer
 
